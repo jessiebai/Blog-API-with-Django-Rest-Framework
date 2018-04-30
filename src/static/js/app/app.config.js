@@ -4,24 +4,25 @@ angular.module('try').
     config(
         function(
           $locationProvider,
+          $resourceProvider,//resourceProvider allows us to manipulate how our resources work
           $routeProvider
           ){
           $locationProvider.html5Mode({
               enabled:true
             })
-
+          $resourceProvider.defaults.stripTrailingSlashes = false;
           $routeProvider.
               when("/", {
                 template: "<blog-list></blog-list>"
               }).
               when("/about", {
-                templateUrl: "/templates/about.html"
+                templateUrl: "/api/templates/about.html"
               }).
               when("/blog", {
                   template: "<blog-list></blog-list>",
                   // redirectTo: '/'
               }).
-              when("/blog/:id", {
+              when("/blog/:slug", {
                   template: "<blog-detail></blog-detail>"
               }).
               // when("/blog/:id/:abc", {

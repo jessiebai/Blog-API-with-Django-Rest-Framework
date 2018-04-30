@@ -2,7 +2,7 @@
 
 angular.module('blogList').
     component('blogList', {
-        templateUrl: '/templates/blog-list.html',
+        templateUrl: '/api/templates/blog-list.html',
         controller: function(Post, $location, $routeParams, $rootScope, $scope){
             // console.log($location.search())
             var q = $location.search().q
@@ -42,7 +42,7 @@ angular.module('blogList').
                         setupCol($scope.items, 2)
                         $scope.loadingQuery = false
                     }
-                     
+
                 }
 
             })

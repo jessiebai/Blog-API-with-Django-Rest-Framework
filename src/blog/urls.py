@@ -21,7 +21,7 @@ from django.contrib import admin
 from django.views.generic.base import TemplateView
 from rest_framework_jwt.views import obtain_jwt_token
 
-from ang.views import get_angular_template
+from ang.views import AngularTemplateView
 
 # django API
 urlpatterns = [
@@ -32,7 +32,7 @@ urlpatterns = [
     url(r'^api/comments/', include("comments.api.urls", namespace='comments-api')),
     url(r'^api/posts/', include("posts.api.urls", namespace='posts-api')),
     # only accept capitalized numbers underscoress dashes and dots
-    url(r'^api/templates/(?P<item>[A-Za-z0-9\_\-\.\/]+)\.html$', get_angular_template)
+    url(r'^api/templates/(?P<item>[A-Za-z0-9\_\-\.\/]+)\.html$', AngularTemplateView.as_view())
 
 ]
 

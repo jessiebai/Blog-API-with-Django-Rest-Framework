@@ -9,7 +9,7 @@ angular.module('loginDetail').
 
         }
         $scope.doLogin = function(user) {
-
+           console.log(user)
         }
         }
       })

@@ -10,6 +10,7 @@ from django.shortcuts import render
 class AngularTemplateView(View):
     def get(self, request, item=None, *args, **kwargs):
         # 'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        # print(item): the name of the html template
         template_dir_path = settings.TEMPLATES[0]["DIRS"][0]
         final_path = os.path.join(template_dir_path, "ang", "app", item + ".html")
         try:

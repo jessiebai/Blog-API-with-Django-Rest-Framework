@@ -1,7 +1,7 @@
 'use strict';
 
 angular.
-    module('post').
+    module('core.post').
         factory('Post', function($resource){
             var url = '/api/posts/:slug/'
             return $resource(url, {}, {
@@ -11,7 +11,6 @@ angular.
                     isArray: true,
                     cache: false,
                     transformResponse: function(data, headersGetter, status){
-                      console.log(data)
                       var finalData = angular.fromJson(data)
                       return finalData.results
                     }

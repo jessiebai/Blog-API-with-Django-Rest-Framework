@@ -26,7 +26,12 @@ angular.module('try').
                   template: "<blog-detail></blog-detail>"
               }).
               when("/login", {
-                  template: "<login-detail></login-detail>"
+                  template: "<login-detail></login-detail>",
+                  // redirectTo: '/'
+              }).
+              when("/logout", {
+                //  template: "<login-detail></login-detail>",
+                  redirectTo: '/login'
               }).
               // when("/blog/:id/:abc", {
               //     template: "<blog-list></blog-list>"

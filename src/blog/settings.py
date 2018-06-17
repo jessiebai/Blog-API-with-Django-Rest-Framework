@@ -133,11 +133,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
+# src/static
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     #'/var/www/static/',
 ]
+
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
 
@@ -161,7 +162,7 @@ REST_FRAMEWORK = {
          'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
         #'rest_framework.authentication.BasicAuthentication'
 
-    ), 
+    ),
     "DEFAULT_PERMISSION_CLASSES": (
         'rest_framework.permissions.IsAuthenticated',
         #'rest_framework.permissions.IsAuthenticatedOrReadOnly',
@@ -185,13 +186,3 @@ curl -X POST -H "Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2V
 curl http://127.0.0.1:8000/api/comments/
 
 '''
-
-
-
-
-
-
-
-
-
-
